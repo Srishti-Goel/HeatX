@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser")
 const app = express();
 const spawn = require("child_process").spawn;
-const spawn2 = require("child_process").spawn;
   
 app.use(bodyParser.urlencoded({extended:true}));
 
