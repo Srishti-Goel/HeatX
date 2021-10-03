@@ -16,6 +16,10 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/views/index.html");
 })
 
+app.get("/calculator", function(req, res){
+  res.sendFile(__dirname + "/views/calculator.html");
+})
+
 app.get("/blog", function(req, res){
   res.sendFile(__dirname + "/views/index-blog.html");
 })
