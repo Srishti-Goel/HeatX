@@ -1,13 +1,11 @@
+import sys
 import requests
 import json
 import datetime
-import pandas as pd
-import numpy as np
 
-import matplotlib.pyplot as plt
+lat = float(sys.argv[1]) # Input latitude - to be given
+lon = float(sys.argv[2]) # Input longitude - to be given
 
-lat = 39.56499 # Input latitude - to be given
-lon = -121.55527 # Input longitude - to be given
 
 url = "https://modis.ornl.gov/rst/api/v1/"
 header = {'Accept': 'application/json'}
@@ -20,7 +18,6 @@ year = datetime.today().year
 
 modis_start_date = f"A{year}{start_day}"
 modis_end_date = f"A{year}{end_day}"
-
 
 prod = ['MOD13Q1','MOD11A2','MOD14A2'] # MODIS product for LST data, NDVI, Thermal anomalies
 data_band = ['250m_16_days_NDVI','LST_Day_1km','FireMask'] 
@@ -60,6 +57,7 @@ thermal_anomaly_response = requests.get("".join([
         "&kmLeftRight=", str(left_right)
     ]), headers=header)
 
+
 from statistics import mean
 subset= [0,0,0]
 means=[0,0,0]
@@ -76,4 +74,7 @@ data = subset[2]['subset'][0]['data']
 means[2] = mean(data)
 # ndvi_response.text
 
-print(means)
+print(means[0])
+print(means[1])
+print(means[2])
+sys.stdout.flush()
