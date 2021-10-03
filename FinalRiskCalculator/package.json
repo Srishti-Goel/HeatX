@@ -1,0 +1,18 @@
+{
+  "name": "weatherproject",
+  "version": "1.0.0",
+  "description": "This is a project that displays the weather.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Gray",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "python-shell": "^3.0.0"
+  },
+  "devDependencies": {}
+}
