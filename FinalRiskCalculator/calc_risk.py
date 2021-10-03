@@ -15,7 +15,7 @@ X[1] = X[1] / max_values[1][0]
 X[2] = X[2] / max_values[2][0]
 A = sigmoid( np.dot(logistic_reg_model['w'].T, X) + logistic_reg_model['b'] )
 A = np.squeeze(np.array(A))
-risk = 'Bleh'
+risk = ''
     
 if A < 0.33:
     risk = 'GREEN'
