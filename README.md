@@ -1,10 +1,15 @@
 # HeatX
 Team HeatX's solution for the NASA SpaceApps Challenge 2021
 
+HIGH-LEVEL PROJECT SUMMARY
+We developed a web-application that allows users to stay updated with nearby fire-alerts, raise the alarm themselves and find the closest help-line numbers in case of a crisis. They can also calculate the risk of finding themselves in the midst of a forest fire by using the latest climate and vegetation data. Heat maps of nearby areas are also clearly displayed in straight-forward and intuitive maps. Yet, the real deal-breaker of our application is its focus on community-based mitigation measures. After reading our assortment of thoroughly researched articles, users can write and read stories on their experience with forest-fires to motivate the community.
+
+
 DETAILED PROJECT DESCRIPTION
 A number of 37,059 fires were detected in year 2018 using MODIS (Moderate Resolution Imaging Spectro-radiometer) sensor data. Every year large areas of forests are affected by fires of varying intensity and extent. They pose a threat not only to the forest wealth but also to the entire regime to fauna and flora seriously disturbing the bio-diversity and the ecology and environment of a region. What is really scary is the lack of awareness amongst the mass regarding this grave threat.
 
-
+LINK TO PROJECT "DEMO"
+https://docs.google.com/presentation/d/1LQcUddhv6tqu9ID82RUkGg_dP_FfhkCZ/edit?usp=sharing&amp;ouid=102643226881637686854&amp;rtpof=true&amp;sd=true
 
 FEATURES:
 
