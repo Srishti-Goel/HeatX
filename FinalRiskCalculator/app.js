@@ -1,17 +1,18 @@
 const express = require("express");
-const bodyParser = require("body-parser")
-const app = express();
+const bodyParser = require("body-parser");
 const spawn = require("child_process").spawn;
-  
-app.use(bodyParser.urlencoded({extended:true}));
 
-app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+const router = express.Router();
+  
+router.use(bodyParser.urlencoded({extended:true}));
+
+router.get("/", function(req, res){
+  res.sendFile(__dirname + "/calculator.html");
 })
 
-app.post("/", function(req,res){
+router.post("/", function(req,res){
 
-  console.log("Going to python");
+  console.log("Going to python with", req.body);
   const pythonProcess = spawn('python', ['./modis.py', req.body.lat, req.body.long]);
     pythonProcess.stdout.on('data', (data) => {
       dataStr = data.toString().split('\r\n');
@@ -31,6 +32,4 @@ app.post("/", function(req,res){
   
 })
 
-app.listen(3000, function(){
-  console.log("Server is running on port 3000.");
-})
+module.exports = router;

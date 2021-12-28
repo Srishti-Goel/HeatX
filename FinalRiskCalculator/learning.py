@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from numpy.core.defchararray import array
 import pandas as pd
-import sys
 import copy
+
+import codecs, json 
 
 
 all_dataset = pd.read_table('WildFire_Prediction_Data_Set.csv', sep = ',', header = 0, names = ['NDVI', 'LST', 'Thermal Anomalies', 'fire_status'], dtype = float)
@@ -110,3 +112,15 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations=2000, learning_rate=0
          "num_iterations": num_iterations}
     
     return d
+
+model = model(train_X, train_Y, test_X, test_Y, num_iterations= 1000, learning_rate = 0.005, print_cost = False)
+
+w_list = model['w'].tolist()
+b_list = model['b'].tolist()
+
+w_list.append(b_list)
+
+save_file_path = 'weights.json'
+
+json.dump(w_list, codecs.open(save_file_path, 'w', encoding='utf-8'))
+
