@@ -8,16 +8,14 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+const spawn = require("child_process").spawn;
+
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(express.static("public"));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/views/index.html");
-})
-
-app.get("/calculator", function(req, res){
-  res.sendFile(__dirname + "/views/calculator.html");
 })
 
 app.get("/blog", function(req, res){
@@ -27,6 +25,14 @@ app.get("/blog", function(req, res){
 app.get("/community-guidelines", function(req, res){
   res.sendFile(__dirname + "/views/community-guidelines.html");
 })
+
+app.get("/calculator", function(req, res){
+  res.sendFile(__dirname + "/views/risk-calculator.html");
+})
+
+const calculator = require('./FinalRiskCalculator/app');
+
+app.use('/calculate-risk', calculator);
 
 app.listen(3000, function(){
   console.log("Server is running on port 3000.");
